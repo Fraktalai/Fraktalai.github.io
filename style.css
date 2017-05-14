@@ -1,17 +1,19 @@
+// @font-face { font-family: Aldrich; src: url('Aldrich.woff2'); } 
+
 body {
-background-image: url(fonas.jpg);
-padding: 20px;
-border-color: silver;
-border-width: 30px;
-border-style: double;
-border-radius: 400px 200px 100px 50px;
-margin: 0px 0px 0px 0px;
-cursor: url("Fraktalai1.ico"), default;
-}
+font-family: "Trebuchet MS", Helvetica, sans-serif;
+text-align: center;
+} 
+
+div.background {display: block; position: fixed; top: 0px; left: 0px; right: 0px;
+bottom: 0px; background: linear-gradient(30deg, #000208 10%, #405030 ); z-index: -1}
+.drawing {display: block; margin: 50px auto 50px auto; padding: 4px 2px 4px 2px;
+background-color: #FFFFE0; border-style: double; margin; border-width: 3px;}
 
 
-h1 {background-color: yellow; font-size: 128px; border-bottom: 12px solid cyan; text-align: center}
-p {color: black; font-size: 25px; font-family: Helvetica;}
+h1 {color: white; font-size: 32px;}
+h2 {color: white; font-size: 16px;}
+p {color: white; font-size: 16px; font-family: Arial;}
 p.klase {color: cyan;}
 .pabraukta {text-decoration: underline}
 .perbraukta {text-decoration: line-through}
