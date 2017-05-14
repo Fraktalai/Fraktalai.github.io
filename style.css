@@ -1,0 +1,45 @@
+body {
+background-image: url(fonas.jpg);
+padding: 20px;
+border-color: silver;
+border-width: 30px;
+border-style: double;
+border-radius: 400px 200px 100px 50px;
+margin: 0px 0px 0px 0px;
+cursor: url("Fraktalai1.ico"), default;
+}
+
+
+h1 {background-color: yellow; font-size: 128px; border-bottom: 12px solid cyan; text-align: center}
+p {color: black; font-size: 25px; font-family: Helvetica;}
+p.klase {color: cyan;}
+.pabraukta {text-decoration: underline}
+.perbraukta {text-decoration: line-through}
+.virðbraukta {text-decoration: overline}
+.pasviræs {font-style: italic}
+.tarpeiluciu {line-height: 10px}
+.imagec {display: block; margin-left: auto; margin-right:auto; padding: 10px 20px 40px 80px;
+background-color: silver;}
+a {display: block}
+a:link {color: green;}
+a:visited{color: yellow;}
+a:hover {color: red; position: relative; top: -.3em}
+
+.kairys {width: 300px; float: left; background-color: yellow}
+.deðinys {width: 200px; float: right; background-color: green}
+.belekur {background-color: black; color: white; position: absolute; top: 15px; left: 10px; width: 250px; height: 25px}
+.belekurfiks {background-color: black; color: white; position: fixed; top: 50px; left: 10px; width: 250px; height: 25px; overflow: scroll}
+
+ul{list-style: none;}
+// line-height, vertical menu CSS tutorial for beginners 41-43
+// display: inline, block, inline-block, table, table-cell
+// Atribute selectors   p[lang]; p[lang="fr"]; p[lang^="fr"]; p[lang$="ko"]; p[lang*="us"]
+// p:nth-child(2n+4)
+// p {}  :not(p) {}
+// p::first-letter {}   p:first-line {}
+// opacity: 0.5;
+// background: linear-gradient(30deg, green, blue 20%, yellow);
+// background: linear-gradient(rgba(255,255,0,0.0), rgba(0,0,255,1));
+// text-shadow: 3px 3px 5px orange (galima du ðeðëlius, kai atskiri kableliu)
+// box-shadow: 15px 15px 5px 7px orange 
+// box-shadow: inset 0 0 15px black
