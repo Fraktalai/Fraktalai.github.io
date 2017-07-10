@@ -14,18 +14,19 @@
 </head>
 
 <body>
-<div class="backgroundoscilo">
+<div class="backgroundoscilo"> </div>
 <h1> Signalų teorija I dalis </h1>
 <div id="osciloskopovieta">
 <canvas style="position: fixed; top: 85px; left: 0px;" id="osciloscopebody" width="640" height="360"></canvas>
 <canvas id="osciloscopesignal" width="280" height="280" style="position: fixed; top: 125px; left: 50px;"></canvas>
 <input style="position: fixed; top: 125px; left: 440px; background-color: #889977;" type="button" id="ijungimas" value="OFF" onclick="isjungimas();">
+<div style="position: fixed; top: 110px; left: 520px;">
 <br> 1 Kanalo dažnis, Hz <br>
 <input id="ch1" type="range" min="1" max="1000" onchange="changech1();">
 <br> 2 Kanalo dažnis, Hz <br>
 <input id="ch2" type="range" min="1" max="1000" onchange="changech2();">
 <br> U, V <br>
-<input id="amplitudech2" type="range" min="-100" max="100" onchange="changech2();">
+<input id="amplitudech2" type="range" min="0" max="100" onchange="changech2();">
 </div>
 
 <script src="osciloskopas.js"></script>

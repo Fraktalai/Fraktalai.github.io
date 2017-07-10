@@ -93,8 +93,8 @@ function changech2() {
 	
 function funcx(ctx) {
 	global.x += 2*global.ch1freq*0.04/1000; 
-	while(global.x>1) {global.x -= 2; ctx.stroke(); ctx.beginPath()};
-	while(global.x<-1) {global.x += 2; ctx.stroke(); ctx.beginPath()};
+	if(global.x>1) {global.x -= 2 + 2*global.ch1freq*0.04/1000; ctx.stroke(); ctx.beginPath()}
+	else if(global.x<-1) {global.x += 2 + 2*global.ch1freq*0.04/1000; ctx.stroke(); ctx.beginPath()};
 	return global.x;
 }
 
@@ -112,7 +112,7 @@ function signalas() {
 		ctx.beginPath();
 		for(i=0; i<1000; i++) {
 			ctx.lineTo(140 + 140*funcx(ctx), 140 - 140*funcy(ctx)); }
-		ctx.stroke(); }, 40);
+		ctx.stroke();}, 40);
 }
 
 osciloskopo_maketas();
