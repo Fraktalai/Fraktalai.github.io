@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="shortcut icon" href="icon.ico"/>
+<title> fiBonatis </title>
+<meta name="description" content="Smagiausios matematinės idėjos ne matematikams." />
+<meta name="keywords" content="Fraktalai, Fractals, Mandelbrot, Python" />
+<meta http-equiv="author"content="Oskaras Venckus" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-language" content="lt-LT">
+</head>
+
+<body>
+<div class="backgroundart"></div>
+<h1> FiBonačio sekos, spiralės ir aukso pjūvis </h1>
+
+<div class = "blokas">
+<canvas id="fiBonaci" width="360" height="570" style="border:4px solid #FFEE00; background: radial-gradient(circle farthest-corner at 120px 160px, #664800, #110018);"></canvas> 
+<p> <br> Tetetwgsfidogsjdfoigjsdioghigfo sdfkoisgdfkgois dkfgois lpasdfasdfj dfgs df </p>
+</div>
+
+<div class = "blokas">
+<canvas id="fiBonaci3" width="480" height="480" style="border:4px solid #99EE00; background: radial-gradient(circle farthest-corner at 240px 240px, #66AA11, #332211);"></canvas>
+<h2> Pavadinimas </h2>
+<br> Spiralių skaičius pagal laikrodžio rodyklę <br>
+<input id="spiralsk3" type="number" min="1" max="34" onchange="draw3()"> <br>
+<br> Spiralių skaičius prieš laikrodžio rodyklę <br>
+<input id="spiralsk4" type="number" min="1" max="34" onchange="draw3()"> <br>
+</div>
+
+<div class = "blokas">
+<canvas id="fiBonaci2" width="640" height="640" style="border:4px solid #FFEE00; background: radial-gradient(circle farthest-corner at 320px 320px, #664800, #110018);"></canvas>
+<h2> Pavadinimas </h2>
+<p> <br> <br> <br> Thghdfghdlnkbldfgbkdlmvkldfmgkbn fgbkdfkgblmdflg fmgbkldfmgbk </p>
+<br> Spiralių skaičius <br>
+<input id="spiralsk" type="number" min="1" max="32" onchange="draw2()"> <br>
+<br> Greitis <br>
+<input id="spiralsk2" type="range" min="-10" max="10" onchange="draw2()">
+
+
+<button onclick="sustabdyti();">Sustabdyti</button>
+
+
+</div>
+
+<script src="fiSpiral.js"></script>
+</body>
+
+</html>

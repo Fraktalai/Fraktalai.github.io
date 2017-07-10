@@ -1,22 +1,29 @@
-// @font-face { font-family: Aldrich; src: url('Aldrich.woff2'); } 
-
-body {
+body { 
 font-family: "Trebuchet MS", Helvetica, sans-serif;
 text-align: center;
 } 
 
-div.background {display: block; position: fixed; top: 0px; left: 0px; right: 0px;
+div.backgroundart {display: block; position: fixed; top: 0px; left: 0px; right: 0px;
 bottom: 0px; background: linear-gradient(30deg, #000208 10%, #405030 ); z-index: -1}
+div.backgroundoscilo {display: block; position: fixed; top: 0px; left: 0px; right: 0px;
+bottom: 0px; background: linear-gradient(30deg, #BAA066 10%, #FFFFCC ); z-index: -1}
+div.backgroundhome {display: block; position: fixed; top: 0px; left: 0px; right: 0px;
+bottom: 0px; background: #AAAAAA; z-index: -1}
+
+
+canvas {float: left; margin: 20px 80px 20px 80px;}
+
 .drawing {display: block; margin: 50px auto 50px auto; padding: 4px 2px 4px 2px;
 background-color: #FFFFE0; border-style: double; margin; border-width: 3px;}
 .drawingfloat {display: float; margin: 20px 20px 20px 20px; padding: 4px 2px 4px 2px;
 background-color: #FFFFE0; border-style: double; margin; border-width: 3px;}
 .crotchet {display: float; margin: 10px 10px 10px 10px; background-color: #FFFFE0; padding: 10px 10px 10px 10px;}
 
+.blokas {display: block; float: left;}
 
 h1 {color: white; font-size: 32px;}
-h2 {color: white; font-size: 16px;}
-p {color: white; font-size: 16px; font-family: Arial;}
+h2 {color: white; font-size: 24px; text-align: center; float: right}
+p {color: white; font-size: 16px; font-family: Arial; text-align: left; float: right}
 p.klase {color: cyan;}
 .pabraukta {text-decoration: underline}
 .perbraukta {text-decoration: line-through}
@@ -34,6 +41,7 @@ a:hover {color: red; position: relative; top: -.3em}
 .deðinys {width: 200px; float: right; background-color: green}
 .belekur {background-color: black; color: white; position: absolute; top: 15px; left: 10px; width: 250px; height: 25px}
 .belekurfiks {background-color: black; color: white; position: fixed; top: 50px; left: 10px; width: 250px; height: 25px; overflow: scroll}
+.
 
 ul{list-style: none;}
 // line-height, vertical menu CSS tutorial for beginners 41-43
