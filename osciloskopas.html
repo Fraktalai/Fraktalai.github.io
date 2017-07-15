@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="shortcut icon" href="icon.ico"/>
+<title> Osciloskopas </title>
+<meta name="description" content="Smagiausios matematinės idėjos ne matematikams." />
+<meta name="keywords" content="Fraktalai, Fractals, Mandelbrot, Python" />
+<meta http-equiv="author"content="Oskaras Venckus" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-language" content="lt-LT">
+</head>
+
+<body>
+<h1> Signalų teorija I dalis </h1>
+<canvas style="position: fixed; top: 0px; left: 0px; margin: 0px 0px 0px 0px;" id="osciloscopebody" width="640" height="360"></canvas>
+<canvas id="osciloscopesignal" width="280" height="280" style="position: fixed; top: 39px; left: 48px; margin: 0px 0px 0px 0px;"></canvas>
+<canvas id="osciloscopephoto" width="280" height="280" style="position: fixed; top: 39px; left: 48px; margin: 0px 0px 0px 0px;"></canvas>
+<input style="position: fixed; margin: 0px 0px 0px 0px; top: 20px; left: 360px; background-color: #889977; width:40px; height:20px;" type="button" id="ijungimas" value="OFF" onclick="isjungimas();">
+
+<input id="ch1" style="position: fixed; top: 70px; left: 369px; width: 90px;" type="range" min="1" max="10" oninput="changech1();">
+<input id="ch1div10" style="position: fixed; top: 70px; left: 471px; width: 30px;" type="range" min="0" max="10" oninput="changech1();">
+<input id="amplitudech1" style="position: fixed; top: 128px; left: 369px; width: 133px;" type="range" min="1" max="99" oninput="changech1();">
+
+<input id="ch2" style="position: fixed; top: 230px; left: 369px; width: 90px;" type="range" min="1" max="10" oninput="changech2();">
+<input id="ch2div10" style="position: fixed; top: 230px; left: 471px; width: 30px;" type="range" min="0" max="10" oninput="changech2();">
+<input id="amplitudech2" style="position: fixed; top: 288px; left: 369px; width: 133px;" type="range" min="1" max="99" oninput="changech2();">
+
+<input style="position: fixed; top: 65px; left: 510px; background: transparent; height: 20px; width:35px;" type="button" id="mag1" value="" onclick="ch1magnitude(0);">
+<input style="position: fixed; top: 65px; left: 545px; background: transparent; height: 20px; width:35px;" type="button" id="mag2" value="" onclick="ch1magnitude(1);">
+<input style="position: fixed; top: 65px; left: 580px; background: transparent; height: 20px; width:35px;" type="button" id="mag3" value="" onclick="ch1magnitude(2);">
+
+<input style="position: fixed; top: 85px; left: 510px; background: transparent; height: 20px; width:35px;" type="button" id="mag4" value="" onclick="ch1magnitude(3);">
+<input style="position: fixed; top: 85px; left: 545px; background: transparent; height: 20px; width:35px;" type="button" id="mag5" value="" onclick="ch1magnitude(4);">
+<input style="position: fixed; top: 85px; left: 580px; background: transparent; height: 20px; width:35px;" type="button" id="mag6" value="" onclick="ch1magnitude(5);">
+
+<input style="position: fixed; top: 110px; left: 510px; background: transparent; height: 30px; width:35px;" type="button" id="sig1" value="" onclick="signal1(0);">
+<input style="position: fixed; top: 110px; left: 545px; background: transparent; height: 30px; width:35px;" type="button" id="sig2" value="" onclick="signal1(1);">
+<input style="position: fixed; top: 110px; left: 580px; background: transparent; height: 30px; width:35px;" type="button" id="sig3" value="" onclick="signal1(2);">
+<input style="position: fixed; top: 140px; left: 510px; background: transparent; height: 30px; width:35px;" type="button" id="sig4" value="" onclick="signal1(3);">
+<input style="position: fixed; top: 140px; left: 545px; background: transparent; height: 30px; width:35px;" type="button" id="sig5" value="" onclick="signal1(4);">
+
+
+<input style="position: fixed; top: 270px; left: 510px; background: transparent; height: 30px; width:35px;" type="button" id="sig7" value="" onclick="signal2(0);">
+<input style="position: fixed; top: 270px; left: 545px; background: transparent; height: 30px; width:35px;" type="button" id="sig8" value="" onclick="signal2(1);">
+<input style="position: fixed; top: 270px; left: 580px; background: transparent; height: 30px; width:35px;" type="button" id="sig9" value="" onclick="signal2(2);">
+<input style="position: fixed; top: 300px; left: 510px; background: transparent; height: 30px; width:35px;" type="button" id="sig10" value="" onclick="signal2(3);">
+<input style="position: fixed; top: 300px; left: 545px; background: transparent; height: 30px; width:35px;" type="button" id="sig11" value="" onclick="signal2(4);">
+
+<input style="position: fixed; top: 225px; left: 510px; background: transparent; height: 20px; width:35px;" type="button" id="magb1" value="" onclick="ch2magnitude(0);">
+<input style="position: fixed; top: 225px; left: 545px; background: transparent; height: 20px; width:35px;" type="button" id="magb2" value="" onclick="ch2magnitude(1);">
+<input style="position: fixed; top: 225px; left: 580px; background: transparent; height: 20px; width:35px;" type="button" id="magb3" value="" onclick="ch2magnitude(2);">
+
+<input style="position: fixed; top: 245px; left: 510px; background: transparent; height: 20px; width:35px;" type="button" id="magb4" value="" onclick="ch2magnitude(3);">
+<input style="position: fixed; top: 245px; left: 545px; background: transparent; height: 20px; width:35px;" type="button" id="magb5" value="" onclick="ch2magnitude(4);">
+<input style="position: fixed; top: 245px; left: 580px; background: transparent; height: 20px; width:35px;" type="button" id="magb6" value="" onclick="ch2magnitude(5);">
+
+<input id="diskretizavimas" style="position: fixed; top: 335px; left: 540px; width:62px; height:12px; background: #AABB88; border-color: #000000; border-width:1px; font: bold 12px Arial;" type="number" min="1" max="999" onchange="diskretizavimas()"> <br>
+
+<div style="position: fixed; top: 336px; left: 563px; width:24px; height:10px; background: #AABB88; font: bold 12px Arial; z-index:100"> kHz </div>
+
+<a id="download" download="signalas.jpg"><button style="position: fixed; margin: 0px 0px 0px 0px; top: 20px; left: 590px; background-color: transparent; width:30px; height:20px;" type="button" onClick="download()"></button></a>
+
+<div style="position: fixed; top: 360px; left: 480px; width:180px; height:16px; font: bold 12px Arial; text-color: #000000; z-index:100"> &copy Oskaras Venckus </div>
+
+<script src="osciloskopas.js"></script>
+</body>
+
+</html>
