@@ -10,9 +10,6 @@ bottom: 0px; background: linear-gradient(30deg, #BAA066 10%, #FFFFCC ); z-index:
 div.backgroundhome {display: block; position: fixed; top: 0px; left: 0px; right: 0px;
 bottom: 0px; background: #AAAAAA; z-index: -1}
 
-
-canvas {float: left; margin: 20px 80px 20px 80px;}
-
 .drawing {display: block; margin: 50px auto 50px auto; padding: 4px 2px 4px 2px;
 background-color: #FFFFE0; border-style: double; margin; border-width: 3px;}
 .drawingfloat {display: float; margin: 20px 20px 20px 20px; padding: 4px 2px 4px 2px;
@@ -20,22 +17,6 @@ background-color: #FFFFE0; border-style: double; margin; border-width: 3px;}
 .crotchet {display: float; margin: 10px 10px 10px 10px; background-color: #FFFFE0; padding: 10px 10px 10px 10px;}
 
 .blokas {display: block; float: left;}
-
-h1 {color: white; font-size: 32px;}
-h2 {color: white; font-size: 24px; text-align: center; float: right}
-p {color: white; font-size: 16px; font-family: Arial; text-align: left; float: right}
-p.klase {color: cyan;}
-.pabraukta {text-decoration: underline}
-.perbraukta {text-decoration: line-through}
-.virðbraukta {text-decoration: overline}
-.pasviræs {font-style: italic}
-.tarpeiluciu {line-height: 10px}
-.imagec {display: block; margin-left: auto; margin-right:auto; padding: 10px 20px 40px 80px;
-background-color: silver;}
-a {display: block}
-a:link {color: green;}
-a:visited{color: yellow;}
-a:hover {color: red; position: relative; top: -.3em}
 
 .kairys {width: 300px; float: left; background-color: yellow}
 .deðinys {width: 200px; float: right; background-color: green}
