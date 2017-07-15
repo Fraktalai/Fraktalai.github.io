@@ -120,8 +120,9 @@ function osciloskopo_maketas() {
 	ctx.fillText('STOP', 581, 259);
 	ctx.fillText('Amplitudė', 412, 165);
 	ctx.fillText('Amplitudė', 412, 325);
-	ctx.font = 'regular 18px Arial';
-	ctx.fillText('EXT', 550, 325);
+	ctx.font = 'bold 13.5px Arial';
+	ctx.fillText('EXT', 549, 319);
+	ctx.fillText('EXT', 549, 159);
 	ctx.fillStyle = '#333333';
 	ctx.fillRect(590, 20, 30, 20);
 	ctx.beginPath();
