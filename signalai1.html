@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="shortcut icon" href="icon.ico"/>
+<title> Signalai </title>
+<meta name="description" content="Kas yra signalai, ir kam jie reikalingi?" />
+<meta name="keywords" content="Fraktalai, Fractals, Mandelbrot, Python, signalai" />
+<meta http-equiv="author"content="Oskaras Venckus" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-language" content="lt-LT">
+</head>
+
+<body>
+<div class="backgroundoscilo"> </div>
+<h1> Signalų teorija I dalis </h1>
+<p style="text-align:justify; width:800px; float:left; margin-left:30px"> <b>Signalas</b> - tai funkcija, apibūdinanti fizinės sistemos būseną. Dažniausiai nagrinėjama energijos priklausomybė nuo laiko. <br> <br>
+<b>Tolydūs</b> signalai, nepriklausomai nuo jų ilgio, sudaryti iš be galo daug taškų, turinčių skirtingą poziciją ir realią* vertę. Nors tokį signalą galima paveikti: transformuoti, filtruoti, stiprinti ir pan., tačiau nepavyktų apdoroti begalinio informacijos kiekio, jei norėtume išsaugoti kiekvieną tolydžios funkcijos tašką. Šiai problemai spręsti, signalai <b>diskretizuojami</b>. <br> <br>
+<b>Diskrečių</b> signalų vertės išdėstytos lygiais laiko tarpais. Tarpus tarp signalo verčių (angl. samples) lemia <b>diskretizavimo dažnis</b> (angl. sampling frequency). <br> <br>
+Signalai dar skirstomi į <b>analoginius</b>, kurie gali įgytį bet kurią realią* vertę ir <b>skaitmeninius</b> (angl. digital), galinčius įgyti vertę tik iš riboto skaičiaus verčių. <br> <br>
+*reali vertė - priklausanti realiųjų aibei. </p>
+<canvas id="signal1" style="float:right" width="480" height="240"></canvas>
+
+<br> <br><br><br><br>
+
+<iframe src="osciloskopas.html" style="width:640px; height:360px; border: 0px"></iframe> 
+<script src="signalai.js"></script>
+</body>
+
+</html>

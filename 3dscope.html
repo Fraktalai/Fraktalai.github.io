@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="shortcut icon" href="icon.ico"/>
+<title> 3D Osciloskopas </title>
+<meta name="description" content="Virtualus interaktyvus osciloskopas" />
+<meta name="keywords" content="Fraktalai, Fractals, Mandelbrot, Python, osciloskopas" />
+<meta http-equiv="author"content="Oskaras Venckus" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-language" content="lt-LT">
+</head>
+
+<body onresize="resize()">
+<canvas style="position: fixed; top: 0px; left: 0px; z-index: -1" id="3Dscope" width="70" height="130"></canvas>
+<canvas style="position: fixed; top: 0px; left: 0px; z-index: 0" id="menu" width="200" height="200"></canvas>
+<input style="position: fixed; top: 0px; left: 0px; background: transparent; height: 200px; width:20px; border: 0px; outline: none;" type="button" id="menuopen" value="" onclick="openmenu(1);">
+<div id = "makeinvisible" style = "visibility: hidden; width:200px; height:200px; position: fixed; top: 0px; left: 0px;">
+<input style="position: fixed; top: 0px; left: 180px; background: transparent; height: 200px; width:20px; border: 0px; outline: none;" type="button" id="menuclosed" value="" onclick="openmenu(0);">
+
+<input style="position: fixed; top: 40px; left: 10px; background: transparent; height: 20px; width:30px; border-color: #990000; outline: none;" type="button" value="" onmousedown="menubutton(0, 10);" onmouseup="timerinhibitoractivation();" onmouseout="timerinhibitoractivation();" ontouchstart="menubutton(0, 10);" ontouchend="timerinhibitoractivation();">
+<input style="position: fixed; top: 40px; left: 45px; background: transparent; height: 20px; width:30px; border-color: #990000; outline: none;" type="button" value="" onmousedown="menubutton(1, 10);" onmouseup="timerinhibitoractivation();" onmouseout="timerinhibitoractivation();" ontouchstart="menubutton(1, 10);" ontouchend="timerinhibitoractivation();">
+<input style="position: fixed; top: 40px; left: 80px; background: transparent; height: 20px; width:30px; border-color: #990000; outline: none;" type="button" value="" onmousedown="menubutton(2, 10);" onmouseup="timerinhibitoractivation();" onmouseout="timerinhibitoractivation();" ontouchstart="menubutton(2, 10);" ontouchend="timerinhibitoractivation();">
+
+<input style="position: fixed; top: 175px; left: 10px; background: transparent; height: 20px; width:30px; border-color: #990000; outline: none;" type="button" value="" onmousedown="menubutton(0, -10);" onmouseup="timerinhibitoractivation();" onmouseout="timerinhibitoractivation();" ontouchstart="menubutton(0, -10);" ontouchend="timerinhibitoractivation();">
+<input style="position: fixed; top: 175px; left: 45px; background: transparent; height: 20px; width:30px; border-color: #990000; outline: none;" type="button" value="" onmousedown="menubutton(1, -10);" onmouseup="timerinhibitoractivation();" onmouseout="timerinhibitoractivation();" ontouchstart="menubutton(1, -10);" ontouchend="timerinhibitoractivation();">
+<input style="position: fixed; top: 175px; left: 80px; background: transparent; height: 20px; width:30px; border-color: #990000; outline: none;" type="button" value="" onmousedown="menubutton(2, -10);" onmouseup="timerinhibitoractivation();" onmouseout="timerinhibitoractivation();" ontouchstart="menubutton(2, -10);" ontouchend="timerinhibitoractivation();">
+
+<input style="position: fixed; top: 60px; left: 10px; background: transparent; height: 20px; width:30px; border-color: #DD5500; outline: none;" type="button" value="" onmousedown="menubutton(0, 1);" onmouseup="timerinhibitoractivation();" onmouseout="timerinhibitoractivation();" ontouchstart="menubutton(0, 1);" ontouchend="timerinhibitoractivation();">
+<input style="position: fixed; top: 60px; left: 45px; background: transparent; height: 20px; width:30px; border-color: #DD5500; outline: none;" type="button" value="" onmousedown="menubutton(1, 1);" onmouseup="timerinhibitoractivation();" onmouseout="timerinhibitoractivation();" ontouchstart="menubutton(1, 1);" ontouchend="timerinhibitoractivation();">
+<input style="position: fixed; top: 60px; left: 80px; background: transparent; height: 20px; width:30px; border-color: #DD5500; outline: none;" type="button" value="" onmousedown="menubutton(2, 1);" onmouseup="timerinhibitoractivation();" onmouseout="timerinhibitoractivation();" ontouchstart="menubutton(2, 1);" ontouchend="timerinhibitoractivation();">
+
+<input style="position: fixed; top: 155px; left: 10px; background: transparent; height: 20px; width:30px; border-color: #DD5500; outline: none;" type="button" value="" onmousedown="menubutton(0, -1);" onmouseup="timerinhibitoractivation();" onmouseout="timerinhibitoractivation();" ontouchstart="menubutton(0, -1);" ontouchend="timerinhibitoractivation();">
+<input style="position: fixed; top: 155px; left: 45px; background: transparent; height: 20px; width:30px; border-color: #DD5500; outline: none;" type="button" value="" onmousedown="menubutton(1, -1);" onmouseup="timerinhibitoractivation();" onmouseout="timerinhibitoractivation();" ontouchstart="menubutton(1, -1);" ontouchend="timerinhibitoractivation();">
+<input style="position: fixed; top: 155px; left: 80px; background: transparent; height: 20px; width:30px; border-color: #DD5500; outline: none;" type="button" value="" onmousedown="menubutton(2, -1);" onmouseup="timerinhibitoractivation();" onmouseout="timerinhibitoractivation();" ontouchstart="menubutton(2, -1);" ontouchend="timerinhibitoractivation();">
+
+<input style="position: fixed; top: 80px; left: 10px; background: transparent; height: 20px; width:30px; border-color: #EEEE00; outline: none;" type="button" value="" onmousedown="menubutton(0, 0.01);" onmouseup="timerinhibitoractivation();" onmouseout="timerinhibitoractivation();" ontouchstart="menubutton(0, 0.01);" ontouchend="timerinhibitoractivation();">
+<input style="position: fixed; top: 80px; left: 45px; background: transparent; height: 20px; width:30px; border-color: #EEEE00; outline: none;" type="button" value="" onmousedown="menubutton(1, 0.01);" onmouseup="timerinhibitoractivation();" onmouseout="timerinhibitoractivation();" ontouchstart="menubutton(1, 0.01);" ontouchend="timerinhibitoractivation();">
+<input style="position: fixed; top: 80px; left: 80px; background: transparent; height: 20px; width:30px; border-color: #EEEE00; outline: none;" type="button" value="" onmousedown="menubutton(2, 0.01);" onmouseup="timerinhibitoractivation();" onmouseout="timerinhibitoractivation();" ontouchstart="menubutton(2, 0.01);" ontouchend="timerinhibitoractivation();">
+
+<input style="position: fixed; top: 135px; left: 10px; background: transparent; height: 20px; width:30px; border-color: #EEEE00; outline: none;" type="button" value="" onmousedown="menubutton(0, -0.01);" onmouseup="timerinhibitoractivation();" onmouseout="timerinhibitoractivation();" ontouchstart="menubutton(0, -0.01);" ontouchend="timerinhibitoractivation();">
+<input style="position: fixed; top: 135px; left: 45px; background: transparent; height: 20px; width:30px; border-color: #EEEE00; outline: none;" type="button" value="" onmousedown="menubutton(1, -0.01);" onmouseup="timerinhibitoractivation();" onmouseout="timerinhibitoractivation();" ontouchstart="menubutton(1, -0.01);" ontouchend="timerinhibitoractivation();">
+<input style="position: fixed; top: 135px; left: 80px; background: transparent; height: 20px; width:30px; border-color: #EEEE00; outline: none;" type="button" value="" onmousedown="menubutton(2, -0.01);" onmouseup="timerinhibitoractivation();" onmouseout="timerinhibitoractivation();" ontouchstart="menubutton(2, -0.01);" ontouchend="timerinhibitoractivation();">
+
+<input style="position: fixed; top: 120px; left: 115px; background: transparent; height: 20px; width:30px; border-color: #EEEE00; outline: none;" type="button" value="" onclick="menubutton2x(0, -g.freqx/2); menubutton2x(1, -g.freqy/2); menubutton2x(2, -g.freqz/2);" ontouchstart="menubutton2x(0, -g.freqx/2); menubutton2x(1, -g.freqy/2); menubutton2x(2, -g.freqz/2);">
+<input style="position: fixed; top: 95px; left: 115px; background: transparent; height: 20px; width:30px; border-color: #EEEE00; outline: none;" type="button" value="" onclick="menubutton2x(0, g.freqx); menubutton2x(1, g.freqy); menubutton2x(2, g.freqz)" ontouchstart="menubutton2x(0, g.freqx); menubutton2x(1, g.freqy); menubutton2x(2, g.freqz);">
+
+<input id="depth" style="position: fixed; top: 20px; left: 120px; width: 60px;" type="range" min="0" max="60" oninput="change();">
+
+</div>
+<script src="3scope.js"></script>
+</body>
+
+</html>

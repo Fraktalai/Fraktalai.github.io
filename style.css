@@ -15,25 +15,3 @@ background-color: #FFFFE0; border-style: double; margin; border-width: 3px;}
 .drawingfloat {display: float; margin: 20px 20px 20px 20px; padding: 4px 2px 4px 2px;
 background-color: #FFFFE0; border-style: double; margin; border-width: 3px;}
 .crotchet {display: float; margin: 10px 10px 10px 10px; background-color: #FFFFE0; padding: 10px 10px 10px 10px;}
-
-.blokas {display: block; float: left;}
-
-.kairys {width: 300px; float: left; background-color: yellow}
-.deðinys {width: 200px; float: right; background-color: green}
-.belekur {background-color: black; color: white; position: absolute; top: 15px; left: 10px; width: 250px; height: 25px}
-.belekurfiks {background-color: black; color: white; position: fixed; top: 50px; left: 10px; width: 250px; height: 25px; overflow: scroll}
-.
-
-ul{list-style: none;}
-// line-height, vertical menu CSS tutorial for beginners 41-43
-// display: inline, block, inline-block, table, table-cell
-// Atribute selectors   p[lang]; p[lang="fr"]; p[lang^="fr"]; p[lang$="ko"]; p[lang*="us"]
-// p:nth-child(2n+4)
-// p {}  :not(p) {}
-// p::first-letter {}   p:first-line {}
-// opacity: 0.5;
-// background: linear-gradient(30deg, green, blue 20%, yellow);
-// background: linear-gradient(rgba(255,255,0,0.0), rgba(0,0,255,1));
-// text-shadow: 3px 3px 5px orange (galima du ðeðëlius, kai atskiri kableliu)
-// box-shadow: 15px 15px 5px 7px orange 
-// box-shadow: inset 0 0 15px black

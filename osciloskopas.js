@@ -230,7 +230,7 @@ function funcx(ctx) {
 		if(global.x>global.ch1amp) {global.x -= global.ch1amp*2; ctx.stroke(); ctx.beginPath();} }
 	else if (global.signaltype1 == 1) {
 		global.phase1 += global.ch1freq*2*Math.PI*global.step;
-		global.x = global.ch1amp*Math.sin(global.phase1, global.ch1amp); }
+		global.x = global.ch1amp*Math.sin(global.phase1); }
 	else if (global.signaltype1 == 2) {
 		global.phase1 += global.ch1freq*global.step;
 		if (global.phase1 > 1) {global.phase1 -= 2; global.x *= -1} }
@@ -247,7 +247,7 @@ function funcy(ctx) {
 		if(global.y>global.ch2amp) {global.y -= global.ch2amp*2; ctx.stroke(); ctx.beginPath();} }
 	else if (global.signaltype2 == 1) {
 		global.phase2 += global.ch2freq*2*Math.PI*global.step;
-		global.y = global.ch2amp*Math.sin(global.phase2, global.ch2amp); }
+		global.y = global.ch2amp*Math.sin(global.phase2); }
 	else if (global.signaltype2 == 2) {
 		global.phase2 += 2*global.ch2freq*global.step;
 		if (global.phase2 > 1) {global.phase2 -= 1; global.y *= -1} }
