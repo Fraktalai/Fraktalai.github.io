@@ -1,7 +1,7 @@
 var ctx = document.getElementById("signal1").getContext('2d');
 global = {
 	density: 80} //pikselių skaičius per sekundę
-
+var save_signal = [];
 
 function axis(x1, y1, x2, y2) {
 	ctx.beginPath();
@@ -17,6 +17,16 @@ function axis(x1, y1, x2, y2) {
 	ctx.strokeStyle = "#000000";
 	ctx.lineWidth = 2;
 	ctx.stroke();
+	ctx.textAlign="center";
+	ctx.font = 'bold 14px Arial';
+	for (i = 0; i < 5; i++) {
+		ctx.beginPath();
+		ctx.moveTo(x1+i*100, y2);
+		ctx.lineTo(x1+i*100, y2+5);
+		ctx.stroke();
+		ctx.fillText(i, x1+i*100, y2+20); }
+	ctx.fillText('t', x2, y2+20)
+	ctx.stroke();
 }
 
 function rand(n, y1, y2) {
@@ -25,7 +35,7 @@ function rand(n, y1, y2) {
 	return y;
 }
 
-function signal(freq, fazes, x, y, width, height) {
+function signalas(freq, fazes, x, y, width, height) {
 	ctx.beginPath();
 	for (p=0; p<width; p++) {
 		for (i=0; i<freq.length; i++) {
@@ -35,5 +45,16 @@ function signal(freq, fazes, x, y, width, height) {
 	return funcsin;
 }
 	
-axis(10, 10, 470, 230);
-y = signal(rand(10, 1, 10), rand(10, 0, 2*Math.PI), 20, 20, 460, 20);
+function signal(freq, fazes, x, y, width, height) {
+	ctx.beginPath();
+	for (p=0; p<width; p++) {
+		funcsin = 0;
+		for (i=0; i<freq.length; i++) {funcsin += Math.sin(freq[i]*2*Math.PI*p/width+fazes[i]);}
+		save_signal[p]=funcsin;
+		ctx.lineTo(x+p,y+(height/2)-funcsin*height/2); }
+	ctx.stroke();
+}
+	
+axis(10, 10, 470, 210);
+//signal(20, 20, 440, 120);
+signal(rand(10, 1, 20), rand(10, 0, 2*Math.PI), 10, 110, 460, 25);
