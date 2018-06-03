@@ -1,0 +1,1 @@
+var language = 0 //0 - lithuanian; 1 - english; 2 - other

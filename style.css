@@ -4,7 +4,7 @@ text-align: center;
 } 
 
 div.backgroundart {display: block; position: fixed; top: 0px; left: 0px; right: 0px;
-bottom: 0px; background: linear-gradient(30deg, #000208 10%, #405030 ); z-index: -1}
+bottom: 0px; background: linear-gradient(30deg, #AA9988 10%, #FFEEAA ); z-index: -1}
 div.backgroundoscilo {display: block; position: fixed; top: 0px; left: 0px; right: 0px;
 bottom: 0px; background: linear-gradient(30deg, #BAA066 10%, #FFFFCC ); z-index: -1}
 div.backgroundhome {display: block; position: fixed; top: 0px; left: 0px; right: 0px;
