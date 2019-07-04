@@ -6,7 +6,7 @@ function setCookie(cname, cvalue, exdays) {
 }
 
 function redirect(lang) {
-	window.location.assign(window.location.protocol+window.location.hostname+"/"+lang+window.location.pathname.slice(3));
+	window.location.assign(window.location.protocol+"/"+lang+window.location.pathname.slice(3));
 }
 
 function setEnglish(){
