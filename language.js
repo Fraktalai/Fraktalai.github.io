@@ -6,7 +6,7 @@ function setCookie(cname, cvalue, exdays) {
 }
 
 function redirect(lang) {
-	window.location.assign("../"+lang+window.location.pathname.slice(3));
+	window.location.assign(lang+window.location.pathname.slice(6));
 }
 
 function setEnglish(){
@@ -18,5 +18,3 @@ function setLithuanian(){
 	setCookie("language",window.location.pathname,360);
 	redirect("lt");
 }
-
-setCookie("window_loc",window.location.pathname.slice(3),360);
