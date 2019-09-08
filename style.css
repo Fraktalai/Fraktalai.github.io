@@ -3,12 +3,24 @@ font-family: "Trebuchet MS", Helvetica, sans-serif;
 text-align: center;
 } 
 
-div.backgroundart {display: block; position: fixed; top: 0px; left: 0px; right: 0px;
+div.backgroundday {display: block; position: fixed; top: 0px; left: 0px; right: 0px;
 bottom: 0px; background: linear-gradient(30deg, #AA9988 10%, #FFEEAA ); z-index: -1}
 div.backgroundoscilo {display: block; position: fixed; top: 0px; left: 0px; right: 0px;
 bottom: 0px; background: linear-gradient(30deg, #BAA066 10%, #FFFFCC ); z-index: -1}
 div.backgroundhome {display: block; position: fixed; top: 0px; left: 0px; right: 0px;
 bottom: 0px; background: #AAAAAA; z-index: -1}
+
+
+#ltFlag {width: 8mm; position: fixed; top: 0; right: 12mm; border: 1px solid #A3ADA1;}
+#enFlag {width: 8mm; position: fixed; top: 0; right: 2mm; border: 1px solid #A3ADA1;}
+
+/*stereo pics */
+
+.stereo_image{display: block; position: fixed; background-size: contain; background-position: center center; background-repeat: no-repeat; cursor:none; z-index: -1;}
+.stereo_cursor{position: fixed; visibility: hidden; pointer-events:none; width: 20px; height: 20px; background: url("stereo_arrow.png"); background-repeat: no-repeat; background-size: auto; z-index: +2;}
+.nextIndex{display: block; position: fixed; visibility: hidden; background: url("next_index.png"); opacity: 0.8; background-repeat: no-repeat; background-size: contain; background-position: center center; z-index: +1;}
+
+/*Art section*/
 
 .drawing {display: block; margin: 50px auto 50px auto; padding: 4px 2px 4px 2px;
 background-color: #FFFFE0; border-style: double; margin; border-width: 3px;}

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<link rel="shortcut icon" href="../icon.ico"/>
+<title> Stereo galerija </title>
+<meta name="description" content="Smagiausios matematinės idėjos ne matematikams." />
+<meta name="keywords" content="Fraktalai, Fractals, Mandelbrot, Python" />
+<meta http-equiv="author"content="Oskaras Venckus" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-language" content="lt-LT">
+
+</head>
+
+<body style="top: 100vh; left: 100vw; width: 0px; height: 0px;">
+
+<div class="backgroundday"> </div>
+
+<img id="ltFlag" src="../lt_flag.jpg" alt="N/A" onclick="setLithuanian();">
+<img id="enFlag" src="../en_flag.jpg" alt="N/A" onclick="setEnglish();">
+
+<div id="leftEye" style="display: block; position: fixed; top: 5px; left: 42vw; width: 8mm; height: 8mm; background: url(../stereo_akis.png); background-size: contain;" onclick="switchSides()"> </div>
+<div id="rightEye" style="display: block; position: fixed; top: 5px; right: 42vw; width: 8mm; height: 8mm; background: url(../stereo_akis.png); background-size: contain;" onclick="switchSides()"> </div>
+
+<img id="dummyImg" style="display: fixed; top: 100vh; left: 100vw; width: 0px; height: 0px; visibility: hidden;">
+
+<div class="stereo_image"; onmouseenter="showMouse()"; onmouseleave="hideMouse();" onmousemove="mousePos();" id="leftImgId">
+	<div class="nextIndex" id="nextIndexL"></div>
+	<div class="stereo_cursor" id="substitute_cursorL"></div>
+</div>
+<div class="stereo_image"; onmouseenter="showMouse()"; onmouseleave="hideMouse();" onmousemove="mousePos();" id="rightImgId">
+	<div class="nextIndex" id="nextIndexR"></div>
+	<div class="stereo_cursor" id="substitute_cursorR"></div>
+</div>
+
+<script src="../stereo_pics.js"></script>
+
+</body>
+</html>
